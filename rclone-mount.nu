@@ -1,5 +1,5 @@
-# Do I need to create the group every time? Probably, right?
-pueue group add mounts
+# Do I need to create the group every time? Apparently no?
+# pueue group add mounts
 pueue parallel -g mounts 10
 
 def pueue_mount [label: string, cmd: string] {

@@ -1,4 +1,4 @@
-use ./gif.nu
+export use media *
 
 alias ii = start
 alias zq = zoxide query
@@ -12,7 +12,7 @@ def show [path: path = "."] {
 	}
 }
 
-def to_kebab [glob: glob] {
+def rename_to_kebab [glob: glob] {
 	ls $glob | each { |f|
 		let ext = (echo $f.name | path parse | get extension);
 		let cur_stem = (echo $f.name | path parse | get stem);
@@ -24,3 +24,4 @@ def to_kebab [glob: glob] {
 def scripts [] {
 	fd '(nu$|sh$)' C:\Users\Gremious\bin\ | fzf --sync | nu $in
 }
+
